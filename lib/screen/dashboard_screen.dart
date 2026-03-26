@@ -26,7 +26,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ),
-
       body: GradientBackground(
         child: SafeArea(
           child: SingleChildScrollView(
@@ -105,15 +104,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          const SizedBox(
-            width: 240,
-            height: 240,
-            child: CircularProgressIndicator(
-              value: 0.7,
-              strokeWidth: 18,
-              strokeCap: StrokeCap.round, // This rounds the edges of the fill
-              backgroundColor: Color(0xff1E293B),
-              valueColor: AlwaysStoppedAnimation<Color>(Color(0xff4AC2B1)),
+          SizedBox(
+            width: 185,
+            height: 185,
+            child: Transform.rotate(
+              angle: 0.5 * 3.14159,
+              child: const CircularProgressIndicator(
+                value: 0.7,
+                strokeWidth: 20,
+                strokeCap: StrokeCap.round,
+                backgroundColor: Color(0xff1E293B),
+                valueColor: AlwaysStoppedAnimation<Color>(Color(0xff4AC2B1)),
+              ),
             ),
           ),
           Column(
@@ -132,8 +134,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 '₱ 500.00',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 33,
+                  fontWeight: FontWeight.w600,
                   decoration: TextDecoration.none,
                 ),
               ),
@@ -145,50 +147,64 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Widget _buildAllowanceCard() {
-    return Row(
-      children: [
-        _infoCard('DAILY ALLOWANCE', '₱ 250.00', 'assets/icons/calendar.png'),
-        const SizedBox(width: 12),
-        _infoCard('DAYS REMAINING', '12 days', 'assets/icons/calendar_big.png'),
-      ],
+    return IntrinsicHeight(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: _infoCard(
+              'DAILY ALLOWANCE',
+              '₱ 250.00',
+              'assets/icons/calendar.png',
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: _infoCard(
+              'DAYS REMAINING',
+              '12 days',
+              'assets/icons/calendar_big.png',
+            ),
+          ),
+        ],
+      ),
     );
   }
 
   Widget _infoCard(String title, String value, String iconPath) {
-    return Expanded(
-      child: Container(
-        padding: const EdgeInsets.all(15),
-        decoration: BoxDecoration(
-          color: const Color(0xff111627),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: const Color(0xff505D6E), width: 1),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(iconPath, width: 17, height: 15, color: Colors.white),
-            const SizedBox(height: 10),
-            Text(
-              title,
-              style: const TextStyle(
-                color: Color(0XFF95A4BA),
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
-                decoration: TextDecoration.none,
-              ),
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: const Color(0xff111627),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: const Color(0xff505D6E), width: 1),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(iconPath, width: 17, height: 15, color: Colors.white),
+          const SizedBox(height: 10),
+          Text(
+            title,
+            style: const TextStyle(
+              color: Color(0XFF95A4BA),
+              fontSize: 10,
+              fontWeight: FontWeight.w500,
+              decoration: TextDecoration.none,
             ),
-            const SizedBox(height: 4),
-            Text(
-              value,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.none,
-              ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            value,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              decoration: TextDecoration.none,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -256,12 +272,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
       onTap: () => Navigator.pushNamed(context, '/addExpenseScreen'),
       child: Container(
         width: double.infinity,
-        height: 50,
+        height: 45,
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             colors: [Color(0xff4BC1B2), Color(0xff5CA6BA), Color(0xff7383C4)],
           ),
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: const Center(
           child: Text(

@@ -28,6 +28,10 @@ flutter:
    - assets/icons/profile.png
    - assets/icons/calendar.png
    - assets/icons/calendar_big.png
+   - assets/icons/food.png
+   - assets/icons/transpo.png
+   - assets/icons/fun.png
+   - assets/icons/misc.png
 
   uses-material-design: true
 
