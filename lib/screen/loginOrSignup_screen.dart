@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vibecheck/screen/dashboard_screen.dart';
-import 'package:vibecheck/screen/signup_screen.dart'; // Ensure this path is correct
+import 'package:vibecheck/screen/signup_screen.dart'; 
 
 class LoginOrSignupScreen extends StatelessWidget {
   const LoginOrSignupScreen({super.key});
