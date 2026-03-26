@@ -12,6 +12,7 @@ import '../screen/login_screen.dart';
 import '../screen/loginOrSignup_screen.dart';
 import '../screen/vaultSystem_screen.dart';
 import '../screen/signup_screen.dart';
+import '../root/main_wrapper.dart';
 
 class AppRoute {
   static const String addExpenseScreen = '/addExpenseScreen';
@@ -20,6 +21,7 @@ class AppRoute {
   static const String loginOrSignupScreen = '/loginOrSignupScreen';
   static const String vaultSystemScreen = '/vaultSystemScreen';
   static const String signupScreen = '/signupScreen';
+  static const String mainWrapper = '/mainWrapper';
 
   static Map<String, WidgetBuilder> get routes {
     return {
@@ -29,6 +31,7 @@ class AppRoute {
       loginOrSignupScreen: (context) => const LoginOrSignupScreen(),
       vaultSystemScreen: (context) => const VaultSystemScreen(),
       signupScreen: (context) => const SignupScreen(),
+      mainWrapper: (context) => const MainWrapper(),
     };
   }
 }

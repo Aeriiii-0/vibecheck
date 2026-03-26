@@ -18,15 +18,21 @@ dev_dependencies:
 flutter:
   assets:
    - assets/icons/vibecheck_logo.png
-   - assets/icons/back_button.png
+   - assets/icons/vibecheck_logo_small.png
    - assets/icons/b.png
+   - assets/icons/dashboard.png
+   - assets/icons/settings.png
+   - assets/icons/vault.png
+   - assets/icons/wallet.png
+   - assets/icons/notification.png
+   - assets/icons/profile.png
+   - assets/icons/calendar.png
+   - assets/icons/calendar_big.png
+
   uses-material-design: true
 
   #assets:
  #   - assets/icons/
 
-  #fonts:
-   # - family: Montserrat
-    #  fonts:
-     #   - asset: assets/fonts/Montserrat/Montserrat-Regular.ttf
-      #    weight: 400
+
+  
